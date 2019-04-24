@@ -2,4 +2,8 @@
 
 ## Level 1: Jokenpo
 
-Implement a code to pass all tests.
+Implement a module that pass all tests.
+
+## Level 2: Bowling
+
+Implement a module that pass all tests and implement new tests indicated
