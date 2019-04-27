@@ -25,6 +25,10 @@ defmodule BowlingTest do
   end
 
   @tag :skip
-  test "handle strike" do
+  test "handles a strike" do
+  end
+
+  @tag :skip
+  test "handles a bunch strike" do
   end
 end
