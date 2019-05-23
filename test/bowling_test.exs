@@ -10,6 +10,11 @@ defmodule BowlingTest do
     assert score == 20
   end
 
+  test "round of 1 results in " do
+    score = Bowling.score("11")
+    assert score == 2
+  end
+
   test "handles a single spares" do
     score = Bowling.score("5/5")
     assert score == 15

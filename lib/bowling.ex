@@ -1,36 +1,32 @@
 defmodule Bowling do
-  def iterate [head | []], function do
-    [function.(head, 0)]
+  def score str do
+  lista = String.split(str, " ")
+  intermediario(lista)
   end
 
-  def iterate [head1 | tail], function do
-    [head2 |  _] = tail
-    [function.(head1, head2)] ++ iterate(tail, function)
+  def intermediario [head | []]  do
+    numbers = String.graphemes(head)
+
+    resultOfMap = Enum.map(numbers, fn x -> Integer.parse(x) end)
+    |> Enum.map(fn {y, _} -> y end)
+    Enum.sum(resultOfMap)
   end
 
-  def score game_string do
-    String.split(game_string, " ")
-    |> iterate(fn frame, next_frame -> calculate(frame, next_frame) end)
-    |> Enum.reduce(0, fn n, acc -> acc + n end)
-  end
-
-  def calculate_spare frame do
-    case String.graphemes(frame) do
-      [f1, _] -> parse(f1)
-      [f1, _, _] -> parse(f1)
+  def numberProcess numbers do
+    Enum.map(numbers, )
+    case numbers do
+      '/' -> 10
+      _ -> Integer.parse(number)
     end
   end
 
-  def calculate frame, next_frame do
-    case String.graphemes(frame) do
-      [_, "/", f1] -> 10 + parse(f1)
-      [_, "/"] -> 10 + calculate_spare(next_frame)
-      [f1, f2] -> parse(f1) + parse(f2)
-    end
+  def intermediario [head | tail]  do
+    numbers = String.graphemes(head)
+
+    resultOfMap = Enum.map(numbers, fn x -> Integer.parse(x) end)
+    |> Enum.map(fn {y, _} -> y end)
+
+    Enum.sum(resultOfMap) + intermediario(tail)
   end
 
-  def parse number do
-    {n, _} = Integer.parse(number)
-    n
-  end
 end
