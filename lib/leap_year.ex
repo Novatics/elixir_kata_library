@@ -4,5 +4,7 @@
 # 3) it can be divided by 400
 
 defmodule LeapYear do
-
+  def is? year do
+    true
+  end
 end
